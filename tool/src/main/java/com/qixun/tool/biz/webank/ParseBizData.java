@@ -63,7 +63,7 @@ public class ParseBizData {
 
     public static void main(String[] args) throws Exception{
 
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
 
         list.add("Y13");
         list.add("tony");

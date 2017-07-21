@@ -50,7 +50,7 @@ public class HttpTool {
                         .loadKeyMaterial(keyStore, keyStorePassword.toCharArray())
                         .loadTrustMaterial(trustStoreFile, new TrustSelfSignedStrategy()).build();
             } catch (Exception e) {
-                throw new RuntimeException("key store fail", e);
+                throw new RuntimeException("load key store fail", e);
             }
 
             // Create all-trusting host name verifier
