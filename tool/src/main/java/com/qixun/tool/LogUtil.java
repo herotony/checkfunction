@@ -1,7 +1,11 @@
 package com.qixun.tool;
 
+import com.qixun.model.PAYTYPE;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by saosinwork on 2017/7/21.
@@ -20,5 +24,25 @@ public class LogUtil {
     public static void main(String[] args){
 
         INFO("hello world");
+        Long currentTime = Long.parseLong("1514649600295");
+        Date date = new Date(currentTime);
+        SimpleDateFormat sdf  = new SimpleDateFormat("yyMMddHH");//"YYMMddHH"在跨年时出错，会181231
+        SimpleDateFormat sdfII = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dataf = sdf.format(date);
+        String dataF = sdfII.format(date).replace("-","").replace(":","").replace(" ","");
+
+        System.out.println(dataf);
+        System.out.println(dataF.substring(0,10));
+        System.out.println(date);
+
+        PAYTYPE paytype = PAYTYPE.WFT_BOTH_C_SCAN_B;
+
+        PAYTYPE paytype_test = PAYTYPE.ValueOf(paytype.getCode());
+        System.out.println(paytype_test.getDescription());
+        System.out.println(paytype_test.getOrderValue());
+
+
+
+
     }
 }

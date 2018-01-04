@@ -12,6 +12,7 @@
         <module>dao</module>
         <module>service</module>
         <module>tool</module>
+        <module>model</module>
     </modules>
 
     <dependencyManagement>
