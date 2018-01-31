@@ -13,6 +13,11 @@
         <module>service</module>
         <module>tool</module>
         <module>model</module>
+        <module>redisfunction</module>
+        <module>dubbofunction</module>
+        <module>zookeeperfunction</module>
+        <module>notifyserverfunction</module>
+        <module>logfunction</module>
     </modules>
 
     <dependencyManagement>
@@ -47,8 +52,25 @@
                 <artifactId>logback-core</artifactId>
                 <version>1.1.2</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.tuan.cozy</groupId>
+                <artifactId>cozy-framework-service</artifactId>
+                <version>1.0.1.20140926</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>repo</id>
+            <url>http://10.9.210.121:8081/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 
 </project>
