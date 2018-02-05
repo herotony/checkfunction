@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -25,6 +25,24 @@ public class LogUtil {
     }
 
     public static void main(String[] args){
+
+
+        List<String> listData = new ArrayList<String>();
+
+        for(int i=0;i<10;i++){
+
+            String orderId = "W18"+ UUID.randomUUID().toString().replace("-","");
+            listData.add(orderId);
+        }
+
+        Collections.sort(listData);
+
+        int j= listData.size();
+
+        for(int i=listData.size()-1;i>=0;i--){
+            System.out.println(listData.get(i));
+        }
+
 
         INFO("hello world");
         Long currentTime = Long.parseLong("1514649600295");

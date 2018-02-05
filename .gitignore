@@ -1,2 +1,11 @@
 .idea/
 *.iml
+install-package/
+tool/target/
+trade-dubbo-service/target/
+model/target/
+trade-dubbo-serviceimpl/target/
+*.properties
+*.lst
+*.jar
+*.class
