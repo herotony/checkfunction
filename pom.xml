@@ -18,6 +18,8 @@
         <module>trade-dubbo-service</module>
         <module>trade-dubbo-serviceimpl</module>
         <module>trade-model</module>
+        <module>dubbo-demo-run</module>
+        <module>dubbo-demo-client</module>
     </modules>
 
     <dependencyManagement>

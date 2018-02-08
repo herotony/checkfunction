@@ -20,7 +20,12 @@ public class TradeServiceImpl implements TradeService {
 
     public TradeDO queryTrade(String tradeNo){
 
-        return null;
+        TradeDO tradeDO = new TradeDO();
+        tradeDO.setPayType(61);
+        tradeDO.setTradeNo(tradeNo);
+        tradeDO.setTradeMoney("100");
+
+        return tradeDO;
     }
 
 }

@@ -24,8 +24,10 @@ public class LogUtil {
         logger.info(message);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws  Exception{
 
+
+       long k =  new SimpleDateFormat("yyyyMMddHHmmss").parse("20180206090730").getTime();
 
         List<String> listData = new ArrayList<String>();
 

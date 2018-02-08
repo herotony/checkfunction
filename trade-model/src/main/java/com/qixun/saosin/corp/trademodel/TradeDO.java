@@ -52,4 +52,5 @@ public class TradeDO implements Serializable {
     public void setPayType(int payType) {
         this.payType = payType;
     }
+
 }
