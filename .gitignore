@@ -9,3 +9,5 @@ trade-dubbo-serviceimpl/target/
 *.lst
 *.jar
 *.class
+dubbo-demo-client/target/
+dubbo-demo-run/target/

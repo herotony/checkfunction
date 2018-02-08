@@ -1,0 +1,1 @@
+#nohup java -server -Xmx20m -Xms20m -Dcom.sun.management.jmxremote.port=20616 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -XX:+HeapDumpOnOutOfMemoryError  -jar dubbo-demo-run-1.0-SNAPSHOT.jar &
