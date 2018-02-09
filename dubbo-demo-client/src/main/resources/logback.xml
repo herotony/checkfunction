@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!-- <property resource="app.properties" /> -->
+    <property name="pattern.category" value="%c{2}"/>
+    <!-- default log -->
+    <appender name="DEFAULT-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/default/common-default.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/default/common-default.log.%d{yyyyMMddHH}</fileNamePattern>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%d [%t] %-5p ${pattern.category} - [%m]%n</pattern>
+        </encoder>
+    </appender>
+    <!-- error log -->
+    <appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/error/common-error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/error/common-error.log.%d{yyyyMMddHH}</fileNamePattern>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%d [%t] %-5p ${pattern.category} %L - [%m]%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+    <!-- warn log -->
+    <appender name="WARN-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/warn/common-warn.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/warn/common-warn.log.%d{yyyyMMddHH}</fileNamePattern>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%d [%t] %-5p ${pattern.category} %L - [%m]%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+    </appender>
+
+
+    <!-- dubbo log -->
+    <appender name="DUBBO-MONITOR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/dubbo/dubbo-monitor.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/dubbo/dubbo-monitor.log.%d{yyyyMMddHH}</fileNamePattern>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%d [%t] %-5p ${pattern.category} - [%m]%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- mask logger -->
+    <logger name="org.springframework" level="WARN" />
+    <logger name="org.apache" level="WARN" />
+    <logger name="httpclient" level="WARN" />
+    <logger name="org.mybatis" level="WARN" />
+    <logger name="com.alibaba.dubbo" level="WARN" />
+
+    <!-- dubbo log -->
+    <logger name="com.alibaba.dubbo" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="DUBBO-MONITOR-APPENDER"/>
+    </logger>
+
+    <!-- mask logger end -->
+    <root level="${log.root.level}">
+        <appender-ref ref="DEFAULT-APPENDER"></appender-ref>
+        <appender-ref ref="ERROR-APPENDER"></appender-ref>
+        <appender-ref ref="WARN-APPENDER"></appender-ref>
+    </root>
+
+</configuration>

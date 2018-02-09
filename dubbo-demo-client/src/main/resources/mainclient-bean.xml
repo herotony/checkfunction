@@ -19,6 +19,6 @@
         </property>
     </bean>
 
-    <bean id="clientStartInstance" class="com.qixun.saosin.corp.client.ClientStart"/>
+    <bean id="mainClientInstance" class="com.qixun.saosin.corp.client.MainClient"/>
 
 </beans>

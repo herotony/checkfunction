@@ -20,6 +20,7 @@
         <module>trade-model</module>
         <module>dubbo-demo-run</module>
         <module>dubbo-demo-client</module>
+        <module>trade-dubbo-service-cluster</module>
     </modules>
 
     <dependencyManagement>
